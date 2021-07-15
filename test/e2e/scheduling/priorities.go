@@ -206,7 +206,7 @@ var _ = SIGDescribe("SchedulerPriorities [Serial]", func() {
 			ginkgo.By("Trying to apply a label on other nodes.")
 			v = "topologyvalue2"
 			for _, node := range nodeList.Items {
-				if node.Name != nodeName {
+				if node.Name == nodeName {
 					framework.AddOrUpdateLabelOnNode(cs, node.Name, k, v)
 					framework.ExpectNodeHasLabel(cs, node.Name, k, v)
 					defer framework.RemoveLabelOffNode(cs, node.Name, k)
