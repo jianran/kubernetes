@@ -237,7 +237,7 @@ var _ = SIGDescribe("SchedulerPriorities [Serial]", func() {
 										},
 										{
 											Key:      "security",
-											Operator: metav1.LabelSelectorOpNotIn,
+											Operator: metav1.LabelSelectorOpIn,
 											Values:   []string{"S2"},
 										}, {
 											Key:      "security",
