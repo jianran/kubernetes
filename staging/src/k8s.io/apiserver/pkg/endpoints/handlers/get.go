@@ -107,6 +107,7 @@ func GetResource(r rest.Getter, scope *RequestScope) http.HandlerFunc {
 			if trace != nil {
 				trace.Step("About to Get from storage")
 			}
+			panic(fmt.Sprintf("jr test %v", r))
 			return r.Get(ctx, name, &options)
 		})
 }
