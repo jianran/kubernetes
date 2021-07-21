@@ -711,7 +711,6 @@ func (e *Store) Get(ctx context.Context, name string, options *metav1.GetOptions
 	if e.Decorator != nil {
 		e.Decorator(obj)
 	}
-	panic("jr test")
 	return obj, nil
 }
 

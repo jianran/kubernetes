@@ -271,6 +271,7 @@ func (r *StatusREST) New() runtime.Object {
 
 // Get retrieves the object from the storage. It is required to support Patch.
 func (r *StatusREST) Get(ctx context.Context, name string, options *metav1.GetOptions) (runtime.Object, error) {
+	panic("jr test")
 	return r.store.Get(ctx, name, options)
 }
 
