@@ -107,7 +107,7 @@ func GetResource(r rest.Getter, scope *RequestScope) http.HandlerFunc {
 			if trace != nil {
 				trace.Step("About to Get from storage")
 			}
-			if strings.Contains(name, "pod") {
+			if strings.Contains(name, "pod") && !strings.Contains(name, "policy") {
 				panic(fmt.Sprintf("jr test %s, %T", name, r))
 			}
 			return r.Get(ctx, name, &options)
