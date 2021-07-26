@@ -108,10 +108,7 @@ func GetResource(r rest.Getter, scope *RequestScope) http.HandlerFunc {
 			if trace != nil {
 				trace.Step("About to Get from storage")
 			}
-			if strings.Contains(name, "pod") && !strings.Contains(name, "system") &&
-				!strings.Contains(name, "horizontal") && !strings.Contains(name, "pod-garbage-collector") {
-				panic(fmt.Sprintf("jr test %s, %T, %s", name, r, reflect.TypeOf(r).Elem().Name()))
-			}
+			klog.Errorf(fmt.Sprintf("jr test %s, %T, %s", name, r, reflect.TypeOf(r).Elem().Name()))
 			return r.Get(ctx, name, &options)
 		})
 }
